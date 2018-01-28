@@ -25,9 +25,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!-- //Meta tags -->
 	<!-- Stylesheet -->
-	<link href="gudang/frontend/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
-	<link rel="stylesheet" href="gudang/frontend/css/jquery-ui.css" />
-	<link href="gudang/frontend/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="<?php echo base_url(); ?>assets/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" />
+	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css' />
 	<!-- //Stylesheet -->
 	<!--fonts-->
 	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -37,12 +37,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
 	<!--background-->
-	<h1> <span>O</span>nline <span>A</span>uto <span>B</span>ooking <span>F</span>orm </h1>
+	<h1> <span>F</span>light <span>B</span>ooking </h1>
 	<div class="bg-agile">
 		<div class="left-agileits-w3layouts-img">
 			<h3>What we provide you</h3>
 			<ul>
-				<li><span>.</span>24x7 Cab service are available</li>
+				<li><span>.</span><a href="<?php echo base_url('login'); ?>">Login</li></a>
 				<li><span>.</span>Online booking facility</li>
 				<li><span>.</span>GPS Tracking system</li>
 				<li><span>.</span>Credit and debit card payment facility</li>
@@ -50,59 +50,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<p>- Your destination is our goal.</p>
 		</div>
 		<div class="book-appointment">
-			<h2>Personal Details</h2>
 			<div class="book-agileinfo-form">
-				<form action="#" method="post">
+				<form action="<?php echo base_url('Insert/tambah_aksi');?>" method="post">
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="Name" placeholder="Full Name" required="">
 						</div>
 						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="Phone no" placeholder="Phone number" required="">
 						</div>
 					</div>
 					<div class="agileits-btm-spc form-text">
-						<input type="email" name="email" placeholder="Email" required="">
 					</div>
 					<div class="clear"></div>
 					<h2 class="sub-head-w3ls">Booking Details</h2>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
-							<input id="datepicker" name="Text" type="text" placeholder="Pick-up Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
+							<input type="text" name="from" placeholder="Departure City" required="">
 						</div>
 						<div class="agileits-btm-spc form-text2">
-							<input type="text" id="timepicker" name="Time" class="timepicker form-control" placeholder="Pick-up Time" value="">
+							<input type="text" name="to" placeholder="Destination City" required="">
 						</div>
 					</div>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="Pick-up Location" placeholder="Pick-up Location" required="">
+							<input id="datepicker" name="depart" type="text" placeholder="Depart" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							    required="">
 						</div>
-						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="Drop-off Location" placeholder="Drop-off Location" required="">
+						<div class="agileits-btm-spc form-text1">
+							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect" name="price">
+								<option value="">Price</option>
+								<option value="200000">Rp 200.000</option>
+								<option value="250000">Rp 250.000</option>
+								<option value="300000">Rp 300.000</option>
+							</select>
 						</div>
 					</div>
 
-					<div class="main-agile-sectns">
-						<div class="agileits-btm-spc form-text1">
-							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-												<option value="">No.of Passengers</option>
-												<option value="">1</option>
-												<option value="">2</option>
-												<option value="">3</option>         
-												<option value="">4</option>
-												<option value="">5</option>
-											</select>
-						</div>
-						<div class="agileits-btm-spc form-text2">
-							<select id="country" onchange="change_country(this.value)" class="frm-field required">
-												<option value="">Direction</option>
-												<option value="">Only One Way</option>
-												<option value="">Return</option>       
-											</select>
-						</div>
-					</div>
+					
 					<div class="wthree-text">
 						<h6>Select your Package</h6>
 						<ul class="radio-w3ls">
@@ -138,12 +121,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!--copyright-->
 	<div class="copy-w3layouts">
-		<p>&copy; 2018. Online Auto Booking Form . All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a>			</p>
+		<p>&copy; 2018. Online Auto Booking Form . All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
 	</div>
 	<!--//copyright-->
-	<script type="text/javascript" src="gudang/frontend/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.2.3.min.js"></script>
 	<!-- Time -->
-	<script type="text/javascript" src="gudang/frontend/js/wickedpicker.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/wickedpicker.js"></script>
 	<script type="text/javascript">
 		$('.timepicker').wickedpicker({
 			twentyFour: false
@@ -151,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!--// Time -->
 	<!-- Calendar -->
-	<script src="gudang/frontend/js/jquery-ui.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
 	<script>
 		$(function () {
 			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
