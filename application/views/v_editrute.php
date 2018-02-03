@@ -573,39 +573,48 @@
       <!-- Main row -->
       <div class="row">
         <center>
-    <h1>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</h1>
-    <h3>Tambah data baru</h3>
+    <h3>Edit Data</h3>
   </center>
   <form action="<?php echo base_url(). 'Crud_rute/update_rute'; ?>" method="post">
+    <?php
+    $no = 1;
+    foreach($rute as $r){ 
+      ?>
     <table style="margin:20px auto;">
       <tr>
         <td>From</td>
         <td>
-          <input type="hidden" name="id" value="<?php echo $u->ruteid ?>">
-          <input type="text" name="from" value="<?php echo $r->rute_from">
+          <input type="hidden" name="id" value="<?php echo $r->ruteid ?>">
+          <input type="text" name="from" value="<?php echo $r->rute_from ?>">
         </td>
       </tr>
       <tr>
         <td>To</td>
-        <td><input type="text" name="to" value="<?php echo $r->rute_to"></td>
+        <td><input type="text" name="to" value="<?php echo $r->rute_to ?>"></td>
       </tr>
       <tr>
         <td>Departure Date</td>
-        <td><input id="datepicker" name="depart" type="date" placeholder="" value="<?php echo $r->depart_on" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-                  required=""></td>
+        <td><input id="datepicker" name="depart" type="date" 
+          value="<?php echo $r->depart_on ?>" 
+          onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+          required=""></td>
       </tr>
       <tr>
-        <select id="country1" onchange="change_country(this.value)" class="frm-field required sect" name="price" value="<?php echo $r->price">
-                <option value="">Price</option>
-                <option value="200000">Rp 200.000</option>
-                <option value="250000">Rp 250.000</option>
-                <option value="300000">Rp 300.000</option>
-              </select>
+        <td>Price</td>
+        <td>
+          
+          <select id="country1" onchange="change_country(this.value)" class="frm-field required sect" name="price" value="<?php echo $r->price ?>">
+            <option value="200000">Rp 200.000</option>
+            <option value="250000">Rp 250.000</option>
+            <option value="300000">Rp 300.000</option>
+          </select>
+        </td>
       </tr>
       <tr>
         <td><button type="submit">Submit</button></td>
       </tr>
     </table>
+    <?php } ?>
   </form>
       </div>
       <!-- /.row (main row) -->

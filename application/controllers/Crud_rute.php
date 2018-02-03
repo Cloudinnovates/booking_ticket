@@ -30,18 +30,18 @@ class Crud_rute extends CI_Controller{
 				'price' => $price
 		);
 		$this->crud_m->input_data($data, 'rute');
-		redirect('crud_rute/index');
+		redirect('admin/rute');
 	}
 
 	function hapus($id){
 		$where = array('ruteid' => $id);
-		$this->crud_m->hapus_record($where, 'rute');
-		redirect('Crud_rute/tampil');
+		$this->crud_m->hapus_data($where, 'rute');
+		redirect('admin/rute');
 	}
 
 	function edit_rute($id){
 		$where = array ('ruteid' => $id);
-		$data['rute'] = $this->crud_m->edit_datarute($where, 'rute')->result();
+		$data['rute'] = $this->crud_m->edit_data($where, 'rute')->result();
 		$this->load->view('v_editrute', $data);
 	}
 
@@ -60,8 +60,8 @@ class Crud_rute extends CI_Controller{
 		$where = array(
 			'ruteid' => $ruteid
 		);
-		$this->crud_m->update_datarute($where, $data, 'rute');
-		redirect('Crud_rute/tampil');
+		$this->crud_m->update_data($where, $data, 'rute');
+		redirect('admin/rute');
 	}
 
 }

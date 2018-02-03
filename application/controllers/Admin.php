@@ -24,5 +24,9 @@ class Admin extends CI_Controller{
 		$this->load->view('v_tambahrute');
 	}
 
+	function editrute(){
+		$this->load->view('v_editrute');
+	}
+
 
 }

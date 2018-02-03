@@ -507,68 +507,7 @@
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
-
-              <p>New Orders</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Bounce Rate</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
+      
       <!-- /.row -->
       <!-- Main row -->
       <div class="row">
@@ -576,38 +515,33 @@
     <h1>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</h1>
     <h3>Tambah data baru</h3>
   </center>
+  <div class="container">
   <form action="<?php echo base_url(). 'Crud_rute/tambah_aksi'; ?>" method="post">
-    <table style="margin:20px auto;">
-      <tr>
-        <td>From</td>
-        <td><input type="text" name="from" placeholder="Departure City"></td>
-      </tr>
-      <tr>
-        <td>To</td>
-        <td><input type="text" name="to" placeholder="Destination City"></td>
-      </tr>
-      <tr>
-        <td>Departure Date</td>
-        <td><input id="datepicker" name="depart" type="date" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-                  required=""></td>
-      </tr>
-      <tr>
-        <td>Price</td>
-        <td>
-          
-          <select id="country1" onchange="change_country(this.value)" class="frm-field required sect" name="price">
+    <div class="form-group">
+      <label for="from">From</label>
+      <input type="text" class="form-control" name="from" placeholder="Departure City">
+    </div>
+    <div class="form-group">
+      <label for="to">To</label>
+      <input type="text" class="form-control" name="to" placeholder="Destination City">
+    </div>
+    <div class="form-group">
+      <label for="depart">Departure Date</label>
+      <input id="datepicker" name="depart" type="date" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+                  required="">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+       <select id="country1" onchange="change_country(this.value)" class="frm-field required sect" name="price">
             <option value="">Price</option>
             <option value="200000">Rp 200.000</option>
             <option value="250000">Rp 250.000</option>
             <option value="300000">Rp 300.000</option>
           </select>
-        </td>
-      </tr>
-      <tr>
-        <td><button type="submit">Submit</button></td>
-      </tr>
-    </table>
+    </div>    
+    <button type="submit" class="btn btn-default">Submit</button>
   </form>
+   </div>
       </div>
       <!-- /.row (main row) -->
 
