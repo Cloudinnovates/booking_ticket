@@ -11,7 +11,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
-      </ol>
+      </ol> 
     </section>
 
     <!-- Main content -->
@@ -22,30 +22,28 @@
       <!-- Main row -->
       <div class="row">
         <center>
-    <h2>Tambah Data Rute</h2>
+    <h2>Tambah Data User</h2>
   </center>
   <div class="container">
-  <form action="<?php echo base_url(). 'Crud/tambah_aksi'; ?>" method="post">
+  <form action="<?php echo base_url(). 'Crud/tambah_aksi_user'; ?>" method="post">
     <div class="form-group col-sm-11">
-      <label for="from">From</label>
-      <input type="text" class="form-control" name="from" placeholder="Departure City">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" placeholder="Username" name="username">
     </div>
     <div class="form-group  col-sm-11">
-      <label for="to">To</label>
-      <input type="text" class="form-control" name="to" placeholder="Destination City">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="password">
     </div>
     <div class="form-group  col-sm-11">
-      <label for="depart">Departure Date</label>
-      <input id="datepicker" name="depart" type="date" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-                  required="" class="form-control">
+      <label for="fullname">Fullname</label>
+      <input type="text" class="form-control" placeholder="Fullname" name="fullname">
     </div>
     <div class="form-group  col-sm-11">
-      <label for="price">Price</label>
-       <select id="country1" onchange="change_country(this.value)" class="form-control" name="price">
-            <option value="">Price</option>
-            <option value="200000">Rp 200.000</option>
-            <option value="250000">Rp 250.000</option>
-            <option value="300000">Rp 300.000</option>
+      <label for="level">Level</label>
+       <select id="country1" onchange="change_country(this.value)" class="form-control" name="level">
+            <option value="">Level</option>
+            <option value="1">Admin</option>
+            <option value="2">User</option>
           </select>
     </div>
     <div class="box=footer col-sm-11">    

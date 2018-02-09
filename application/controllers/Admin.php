@@ -28,5 +28,14 @@ class Admin extends CI_Controller{
 		$this->load->view('v_editrute');
 	}
 
+	function user(){
+		$data['user']=$this->m_admin->tampil_user();
+		$this->load->view('v_user', $data);
+	}
+
+	function tambahuser(){
+		$this->load->view('v_tambahuser');
+	}
+
 
 }
