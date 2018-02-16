@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-	<title>Flight Booking</title>
+	<title>Online Auto Booking Form a Responsive Widget Template :: w3layouts</title>
 	<!-- Meta tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,35 +51,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div class="book-appointment">
 			<div class="book-agileinfo-form">
-				<form action="<?php echo base_url('Transportation/pencarian');?>" method="post">
-					<div class="main-agile-sectns">
-						<div class="agileits-btm-spc form-text1">
-						</div>
-						<div class="agileits-btm-spc form-text2">
-						</div>
-					</div>
-					<div class="agileits-btm-spc form-text">
-					</div>
-					<div class="clear"></div>
-					<h2 class="sub-head-w3ls">Booking Details</h2>
-					<div class="main-agile-sectns">
-						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="from" placeholder="Departure City" required="">
-						</div>
-						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="to" placeholder="Destination City" required="">
-						</div>
-					</div>
-					<div class="main-agile-sectns">
-						<div class="agileits-btm-spc form-text1">
-							<input id="datepicker" name="depart" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
-						</div>
-					</div>
+				
+				<table class="table table-hover">
+					<tr>
+						<th>From</th>
+						<th>To</th>
+						<th>Depart</th>
+						<th>Price</th>
+					</tr>
+					<?php 
+						$no=0;
+						foreach ($hasil as $h) {
+							$no++;
+					?>
+					<tr>
+						<td> <?php echo $h->rute_from; ?> </td>
+						<td> <?php echo $h->rute_to; ?> </td>
+						<td> <?php echo $h->depart_on; ?> </td>
+						<td> <?php echo $h->price; ?> </td>
+					</tr>
+					<?php } ?>
+				</table>
 
-					<input type="submit" value="Submit">
-					<input type="reset" value="Reset">
-				</form>
 			</div>
 
 		</div>

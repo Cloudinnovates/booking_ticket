@@ -119,6 +119,57 @@ class Crud extends CI_Controller{
 		redirect('admin/user');
 	}
 
+
+
+	//DATA TRANSPORTATION
+
+	function tampil_transportation(){
+		$data['transportation'] = $this->m_crud->tampil_data_transportation()->result();
+		$this->load->view('v_transportation', $data);
+	}
+
+	function tambah_aksi_transportation() {
+		$code = $this->input->post('code');
+		$description = $this->input->post('description');
+		$seat_qty = $this->input->post('seat');
+
+		$data = array(
+				'code' => $code,
+				'description' => $description,
+				'seat_qty' => $seat_qty
+		);
+		$this->m_crud->input_data_transportation($data, 'transportation');
+		redirect('admin/transportation');
+	}
+
+	function hapus_transportation($id){
+		$where = array('id' => $id);
+		$this->m_crud->hapus_data_transportation($where, 'transportation');
+		redirect('admin/transportation');
+	}
+
+	function edit_transportation($id){
+		$where = array ('id' => $id);
+		$data['transportation'] = $this->m_crud->edit_data_transportation($where, 'transportation')->result();
+		$this->load->view('v_edittransportation', $data);
+	}
+
+	function update_transportation(){
+		$id = $this->input->post('id');
+		$code = $this->input->post('code');
+		$description = $this->input->post('description');
+		$seat_qty = $this->input->post('seat');
+		$data = array(
+			'code' => $code,
+			'description' => $description,
+			'seat_qty' => $seat_qty
+		);
+		$where = array(
+			'id' => $id
+		);
+		$this->m_crud->update_data_transportation($where, $data, 'transportation');
+		redirect('admin/transportation');
+	}
 }
 
 ?>

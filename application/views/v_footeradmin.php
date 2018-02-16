@@ -14,7 +14,7 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
+<script src="<?php echo base_url();?>assets/js/jquery-2.2.3.min.js"></script>
 <!-- jQuery 3 -->
 <script src="<?php echo base_url();?>assets/adminLTE/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -52,5 +52,11 @@
 <script src="<?php echo base_url();?>assets/adminLTE/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>assets/adminLTE/dist/js/demo.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.maskMoney.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#price').maskMoney({prefix:'Rp. ', thousands:'.', decimal:',', precision:0});
+    });
+  </script>
 </body>
 </html>

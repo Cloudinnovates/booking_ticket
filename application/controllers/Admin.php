@@ -37,5 +37,14 @@ class Admin extends CI_Controller{
 		$this->load->view('v_tambahuser');
 	}
 
+	function transportation(){
+		$data['transportation']=$this->m_admin->tampil_transportation();
+		$this->load->view('v_transportation', $data);
+	}
+
+	function tambahtransportation(){
+		$this->load->view('v_tambahtransportation');
+	}
+
 
 }

@@ -7,5 +7,9 @@ class m_admin extends CI_Model{
 	function tampil_user(){
 		return $this->db->get('user')->result();
 	}
+
+	function tampil_transportation(){
+		return $this->db->get('transportation')->result();	
+	}
 }
 ?>

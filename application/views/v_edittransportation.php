@@ -1,4 +1,5 @@
-<?php require_once 'v_headeradmin.php' ?>
+  <?php require_once 'v_headeradmin.php' ?>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -16,38 +17,42 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      
       <!-- /.row -->
       <!-- Main row -->
       <div class="row">
         <center>
-    <h2>Tambah Data Rute</h2>
+    <h3>Edit Data</h3>
   </center>
-  <div class="container">
-  <form action="<?php echo base_url(). 'Crud/tambah_aksi'; ?>" method="post">
+  <form action="<?php echo base_url(). 'Crud/update_transportation'; ?>" method="post">
+    <?php
+    $no = 1;
+    foreach($transportation as $t){ 
+      ?>
+    <div class="container">
     <div class="form-group col-sm-11">
-      <label for="from">From</label>
-      <input type="text" class="form-control" name="from" placeholder="Departure City">
+      <label for="code">Code</label>
+      <input type="hidden" name="id" value="<?php echo $t->id ?>">
+      <input type="text" class="form-control" name="code" placeholder="Code" value="<?php echo $t->code ?>">
     </div>
     <div class="form-group  col-sm-11">
-      <label for="to">To</label>
-      <input type="text" class="form-control" name="to" placeholder="Destination City">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" name="description" placeholder="Description" value="<?php echo $t->description ?>">
     </div>
     <div class="form-group  col-sm-11">
       <label for="depart">Departure Date</label>
-      <input id="datepicker" name="depart" type="datetime-local" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-                  required="" class="form-control">
+      <input type="text" class="form-control" name="description" placeholder="Description" value="<?php echo $t->description ?>">
     </div>
     <div class="form-group  col-sm-11">
-      <label for="price">Price</label>
-       <input id="price" type="text" class="form-control" name="price" placeholder="Price">
+      <label for="seat">Seat Quantity</label>
+      <input type="text" class="form-control" name="seat" placeholder="Seat" value="<?php echo $t->seat_qty ?>">
     </div>
     <div class="box=footer col-sm-11">    
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </form>
    </div>
+    <?php } ?>
+  </form>
       </div>
       <!-- /.row (main row) -->
 
@@ -56,7 +61,4 @@
   </div>
   <!-- /.content-wrapper -->
   
-  
-
   <?php require_once 'v_footeradmin.php' ?>
-  

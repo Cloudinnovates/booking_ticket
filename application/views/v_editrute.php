@@ -40,16 +40,12 @@
     </div>
     <div class="form-group  col-sm-11">
       <label for="depart">Departure Date</label>
-      <input id="datepicker" name="depart" type="date" value="<?php echo $r->depart_on ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+      <input id="datepicker" name="depart" type="datetime-local" value="<?php echo $r->depart_on ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
                   required="" class="form-control">
     </div>
     <div class="form-group  col-sm-11">
       <label for="price">Price</label>
-       <select id="country1" onchange="change_country(this.value)" class="form-control" name="price" value="<?php echo $r->price ?>" >
-            <option value="200000">Rp 200.000</option>
-            <option value="250000">Rp 250.000</option>
-            <option value="300000">Rp 300.000</option>
-          </select>
+      <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $r->price ?>" id="price">
     </div>
     <div class="box=footer col-sm-11">    
       <button type="submit" class="btn btn-primary">Submit</button>

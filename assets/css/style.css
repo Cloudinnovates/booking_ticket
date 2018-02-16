@@ -236,7 +236,7 @@ img {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 100%;
-    background: url(../images/banner.jpg)no-repeat center top;
+    background: url(../images/airplane_wing.jpg)no-repeat center top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -252,7 +252,7 @@ body {
 .left-agileits-w3layouts-img {
     box-sizing: border-box;
     padding: 8em 2em 0;
-    background: url(../images/left-img.jpg)no-repeat center top;
+    background: url(../images/left.png)no-repeat center top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;

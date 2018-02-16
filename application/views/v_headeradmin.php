@@ -363,6 +363,15 @@
             </span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('admin/transportation'); ?>">
+            <i class="fa fa-pie-chart"></i>
+            <span>Transportation</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
       </ul>
     </section>
     <!-- /.sidebar -->
