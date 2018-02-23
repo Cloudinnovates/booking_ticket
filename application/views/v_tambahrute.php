@@ -6,11 +6,11 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Tambah Rute</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Tambah Rute</li>
       </ol>
     </section>
 
@@ -40,8 +40,17 @@
                   required="" class="form-control">
     </div>
     <div class="form-group  col-sm-11">
+      <label for="arrive">Arrived</label>
+      <input id="datepicker" name="arrive" type="datetime-local" placeholder="Arrived" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+                  required="" class="form-control">
+    </div>
+    <div class="form-group  col-sm-11">
+      <label for="trans_id">Transportation Id</label>
+       <input type="text" class="form-control" name="trans_id" placeholder="Transportation Id">
+    </div>
+    <div class="form-group  col-sm-11">
       <label for="price">Price</label>
-       <input id="price" type="text" class="form-control" name="price" placeholder="Price">
+       <input type="text" class="form-control" name="price" placeholder="Price">
     </div>
     <div class="box=footer col-sm-11">    
       <button type="submit" class="btn btn-primary">Submit</button>

@@ -39,19 +39,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--background-->
 	<h1> <span>F</span>light <span>B</span>ooking </h1>
 	<div class="bg-agile">
-		<div class="left-agileits-w3layouts-img">
-			<h3>What we provide you</h3>
-			<ul>
-				<li><span>.</span><a href="<?php echo base_url('login'); ?>">Login</li></a>
-				<li><span>.</span>Online booking facility</li>
-				<li><span>.</span>GPS Tracking system</li>
-				<li><span>.</span>Credit and debit card payment facility</li>
-			</ul>
-			<p>- Your destination is our goal.</p>
-		</div>
+		
 		<div class="book-appointment">
 			<div class="book-agileinfo-form">
-				<form action="<?php echo base_url('Transportation/pencarian');?>" method="post">
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
 						</div>
@@ -61,13 +51,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="agileits-btm-spc form-text">
 					</div>
 					<div class="clear"></div>
+					<form action="<?php echo base_url('welcome/search');?>" method="get">
 					<h2 class="sub-head-w3ls">Booking Details</h2>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="from" placeholder="Departure City" required="">
+							<input type="text" name="from" placeholder="Departure City" required="" >
 						</div>
 						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="to" placeholder="Destination City" required="">
+							<input type="text" name="to" placeholder="Destination City" required="" >
 						</div>
 					</div>
 					<div class="main-agile-sectns">
@@ -75,19 +66,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input id="datepicker" name="depart" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
 							    required="">
 						</div>
+						<div class="agileits-btm-spc form-text2">
+							<input type="text" name="penumpang" placeholder="Passengers" required="">
+						</div>
 					</div>
 
 					<input type="submit" value="Submit">
 					<input type="reset" value="Reset">
-				</form>
+					</form>
 			</div>
 
 		</div>
 	</div>
 	<!--copyright-->
-	<div class="copy-w3layouts">
-		<p>&copy; 2018. Online Auto Booking Form . All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
-	</div>
 	<!--//copyright-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.2.3.min.js"></script>
 	<!-- Time -->
@@ -105,13 +96,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
 		});
 	</script>
-	<!-- //Calendar -->
-	<script src="<?php echo base_url();?>assets/js/jquery.maskMoney.min.js"></script>
-  	<script type="text/javascript">
-    $(document).ready(function(){
-        $('#price').maskMoney({prefix:'Rp. ', thousands:'.', decimal:',', precision:0});
-    });
-  </script>
+	<<!-- script type="text/javascript">
+		$(document).ready(function(){
+			var rute_from = $("#rute_from");
+			var rute_to = $("#rute_to");
+		$(".btn-submit").click(function(){
+			window.location = "<?php echo site_url('welcome/search/'); ?>" + rute_from.val() + "/" + rute_to.val();
+		});
+		});
+	</script> -->
 
 </body>
 

@@ -7,11 +7,11 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Edit Transportation</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-plane"></i> Home</a></li>
+        <li class="active">Edit Transportation</li>
       </ol>
     </section>
 
@@ -20,10 +20,7 @@
       <!-- /.row -->
       <!-- Main row -->
       <div class="row">
-        <center>
-    <h3>Edit Data</h3>
-  </center>
-  <form action="<?php echo base_url(). 'Crud/update_transportation'; ?>" method="post">
+    <form action="<?php echo base_url(). 'Crud/update_transportation'; ?>" method="post">
     <?php
     $no = 1;
     foreach($transportation as $t){ 
@@ -36,10 +33,6 @@
     </div>
     <div class="form-group  col-sm-11">
       <label for="description">Description</label>
-      <input type="text" class="form-control" name="description" placeholder="Description" value="<?php echo $t->description ?>">
-    </div>
-    <div class="form-group  col-sm-11">
-      <label for="depart">Departure Date</label>
       <input type="text" class="form-control" name="description" placeholder="Description" value="<?php echo $t->description ?>">
     </div>
     <div class="form-group  col-sm-11">

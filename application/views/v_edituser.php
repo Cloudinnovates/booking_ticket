@@ -7,11 +7,11 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Edit User</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-user"></i> Home</a></li>
+        <li class="active">Edit User</li>
       </ol>
     </section>
 
@@ -20,9 +20,6 @@
       <!-- /.row -->
       <!-- Main row -->
       <div class="row">
-        <center>
-    <h3>Edit Data</h3>
-  </center>
   <form action="<?php echo base_url(). 'Crud/update_user'; ?>" method="post">
     <?php
     $no = 1;

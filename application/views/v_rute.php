@@ -6,11 +6,11 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Rute</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Rute</li>
       </ol>
     </section>
 
@@ -28,7 +28,9 @@
       <th>No</th>
       <th>From</th>
       <th>To</th>
-      <th>Departure Date</th>
+      <th>Departure</th>
+      <th>Arrived</th>
+      <th>Transport Id</th>
       <th>Price</th>
       <th>Action</th>
     </tr>
@@ -41,7 +43,9 @@
         <td><?php echo $r->rute_from ?></td>
         <td><?php echo $r->rute_to ?></td>
         <td><?php echo $r->depart_on ?></td>
-        <td><?php echo $r->price ?></td>
+        <td><?php echo $r->arrive_at ?></td>
+        <td><?php echo $r->transportation_id ?></td>
+        <td><?php echo "Rp. " .number_format($r->price,2,",",".");?></td>
         <td>
           <a style="cursor: pointer;" onclick="href='<?php echo base_url(('crud/edit_rute/'. $r->ruteid)); ?>'" class="btn btn-warning btn-sm">
           <span class="glyphicon glyphicon-edit"></span></a>

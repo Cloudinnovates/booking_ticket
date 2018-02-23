@@ -646,8 +646,8 @@ ul.radio-w3ls li {
         -webkit-flex-basis: 40%;
     }
     .book-appointment {
-        flex-basis: 60%;
-        -webkit-flex-basis: 60%;
+        flex-basis: 100%;
+        -webkit-flex-basis: 100%;
     }
 }
 
@@ -829,6 +829,25 @@ ul.radio-w3ls li {
     .form-text2 {
         flex-basis: 48%;
         -webkit-flex-basis: 48%;
+    }
+    .form-text3-title{
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color:white;
+        padding-right: 20px;
+        padding-left: 20px;
+        flex-basis: 22%;
+        -webkit-flex-basis: 22%   
+    }
+    .form-text3-content{
+        text-align: center;
+        font-size: 14px;
+        color:white;
+        padding-right: 20px;
+        padding-left: 20px;
+        flex-basis: 22%;
+        -webkit-flex-basis: 22%;   
     }
 }
 

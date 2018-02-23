@@ -6,11 +6,11 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Tambah Transportation</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-plane"></i> Home</a></li>
+        <li class="active">Tambah Transportation</li>
       </ol>
     </section>
 
@@ -22,10 +22,14 @@
       <!-- Main row -->
       <div class="row">
         <center>
-    <h2>Tambah Data Rute</h2>
+    <h2>Tambah Data Transportation</h2>
   </center>
   <div class="container">
   <form action="<?php echo base_url(). 'Crud/tambah_aksi_transportation'; ?>" method="post">
+    <div class="form-group col-sm-11">
+      <label for="id">Transportation Id</label>
+      <input type="text" class="form-control" name="id" placeholder="Transportation Id">
+    </div>
     <div class="form-group col-sm-11">
       <label for="code">Code</label>
       <input type="text" class="form-control" name="code" placeholder="Code">
