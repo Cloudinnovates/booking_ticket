@@ -78,4 +78,23 @@ class m_crud extends CI_Model{
 		$this->db->join('transportation', 'rute.transportation_id = transportation.id');
 		return $this->db->get();
 	}
+
+	function ambil_data($select, $from, $where){
+		$this->db->select($select);
+		return $this->db->get_where($from, $where);
+	}
+
+	function tambah_reservasi($where){
+		return $this->db->insert('reservation', $where);
+	}
+
+
+	function tampil_data_costumer(){
+		return $this->db->get('costumer');
+	}
+
+
+	function tampil_data_reservation(){
+		return $this->db->get('reservation');
+	}
 }

@@ -182,5 +182,19 @@ class Crud extends CI_Controller{
 	}
 
 	
+
+	// COSTUMER
+	function tampil_costumer(){
+		$data['costumer'] = $this->m_crud->tampil_data_costumer()->result();
+		$this->load->view('v_costumer', $data);
+	}
+
+
+
+	// RESERVATION
+	function tampil_reservation(){
+		$data['reservation'] = $this->m_crud->tampil_data_reservation()->result();
+		$this->load->view('v_reservation', $data);
+	}
 }
 

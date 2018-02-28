@@ -25,6 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!-- //Meta tags -->
 	<!-- Stylesheet -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bs/css/bootstrap.min.css" />
 	<link href="<?php echo base_url(); ?>assets/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" />
 	<link href="<?php echo base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css' />
@@ -38,6 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<!--background-->
 	<h1> <span>F</span>light <span>B</span>ooking </h1>
+
 	<div class="bg-agile">
 		
 		<div class="book-appointment">
@@ -51,35 +53,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="agileits-btm-spc form-text">
 				</div>
 				<div class="clear"></div>
-				<form action="<?php echo base_url('welcome/search');?>" method="get">
-					<h2 class="sub-head-w3ls">Booking Details</h2>
-					<div class="main-agile-sectns">
-						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="from" placeholder="Departure City" required="" >
-						</div>
-						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="to" placeholder="Destination City" required="" >
-						</div>
-					</div>
-					<div class="main-agile-sectns">
-						<div class="agileits-btm-spc form-text1">
-							<input id="datepicker" name="depart" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							required="">
-						</div>
-						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="penumpang" placeholder="Passengers" required="">
-						</div>
-					</div>
+				<div class="container bg-agile">
+					<form action="<?php echo base_url('welcome/step3');?>" method="post">
 
-					<input type="submit" value="Submit">
-					<input type="reset" value="Reset">
-				</form>
+						<h2 class="sub-head-w3ls">Booking Details</h2>
+						<input type="hidden" name="ruteid" value="<?php echo $ruteid; ?>">
+						<input type="hidden" name="custid" value="<?php echo $custid; ?>">
+						<?php foreach ($flight as $row): ?>
+							
+							<div class="row">
+								<?php for ($i=1; $i <= $row->seat_qty; $i++):?> 
+									<div class="col-md-2 ">
+										<label>
+											<input type="radio" name="seat" value="<?php echo $i; ?>"><?php echo $i; ?>
+										</label>
+									</div>
+
+								<?php endfor; ?>
+							</div>
+							<input type="submit" name="submit">
+						<?php endforeach; ?>
+					</form>
+				</div>
 			</div>
 
 		</div>
 	</div>
 	<!--copyright-->
 	<!--//copyright-->
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bs/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.2.3.min.js"></script>
 	<!-- Time -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/wickedpicker.js"></script>

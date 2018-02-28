@@ -39,6 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<!--background-->
 	<h1> <span>F</span>light <span>B</span>ooking </h1>
+
 	<div class="bg-agile">
 		
 		<div class="book-appointment">
@@ -51,76 +52,45 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="agileits-btm-spc form-text">
 				</div>
+				<div class="clear"></div>
+				<div class="container bg-agile">
+					<label>Kode Reservasi Anda</label>
+					<input type="" readonly="true" name="reservation_code" class="form-control" placeholder="Kode Reservasi Anda" value="<?php echo $rescode; ?>">
+				</div>
 				<div class="table-responsive">
 					<table class="table">
 						<thead class="agileits-btm-spc form-text3-title">
 							<tr>
-								<th><center>Asal</center></th>
-								<th><center>Tujuan</center></th>
-								<th><center>Keberangkatan</center></th>
-								<th><center>Kedatangan</center></th>
-								<th><center>Durasi</center></th>
+								<th><center>Jasa Bank</center></th>
+								<th><center>No. Rekening</center></th>
+								<th><center>A/n</center></th>
 							</tr>
 						</thead>
 						<tbody class="agileits-btm-spc form-text3-content">
-							<?php foreach($flight as $row):
-							$arrive_at = strtotime($row->arrive_at);
-							$depart_on = strtotime($row->depart_on);
-							$durasi = $arrive_at-$depart_on;
-							?>
 							<tr>
-								<td><center><?php echo $row->rute_from ?></center></td>
-								<td><center><?php echo $row->rute_to ?></center></td>
-								<td><center><?php echo $row->depart_on ?></center></td>
-								<td><center><?php echo $row->arrive_at ?></center></td>
-								<td><center><?php echo gmdate("H", $durasi).' jam '.gmdate("i", $durasi).' menit '; ?></center></td>
+								<td>Mandiri</td>
+								<td>677748392</td>
+								<td>dda</td>
 							</tr>
-						<?php endforeach; ?>
+							<tr>
+								<td>Mandiri</td>
+								<td>677748392</td>
+								<td>dda</td>
+							</tr>
+							<tr>
+								<td>Mandiri</td>
+								<td>677748392</td>
+								<td>dda</td>
+							</tr>
+							<tr>
+								<td>Mandiri</td>
+								<td>677748392</td>
+								<td>dda</td>
+							</tr>
 					</tbody>
 				</table>
+				<a href="<?php echo base_url('welcome/bukti'); ?>" class="btn btn-primary">Upload Bukti Pembayaran</a>
 			</div>
-		</div>
-	</div>
-</div><br>
-<div class="bg-agile">
-
-	<div class="book-appointment">
-		<div class="book-agileinfo-form">
-			<div class="clear"></div>
-			<form action="<?php echo base_url('welcome/step2');?>" method="post">
-				<h2 class="sub-head-w3ls">Isi Data Diri</h2>
-				<div class="main-agile-sectns">
-					<div class="agileits-btm-spc form-text1">
-						<?php foreach ($flight as $x): ?>
-						<input type="hidden" name="ruteid" value="<?php echo $x->ruteid; ?>">	
-						<?php endforeach; ?>
-						<input type="text" name="name" placeholder="Name" required="" >
-					</div>
-					<div class="agileits-btm-spc form-text2">
-						<input type="text" name="address" placeholder="Address" required="" >
-					</div>
-				</div>
-				<div class="main-agile-sectns">
-					<div class="agileits-btm-spc form-text1">
-						<input type="text" name="phone" placeholder="Phone" required="" >
-					</div>
-					<div class="agileits-btm-spc form-text2">
-						<select id="country1" onchange="change_country(this.value)" class="frm-field required sect" name="gender">
-							<option value="" hidden disabled selected>Gender</option>
-							<option value="male">Male</option>
-							<option value="female">Female</option>
-						</select>
-					</div>
-				</div>
-				<div class="main-agile-sectns">
-					<div class="agileits-btm-spc form-text1">
-						<input type="email" name="email" placeholder="Email" required="" >
-					</div>
-				</div>
-
-				<input type="submit" value="Submit">
-				<input type="reset" value="Reset">
-			</form>
 		</div>
 
 	</div>

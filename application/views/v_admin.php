@@ -23,7 +23,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>User</h3>
+              <h3><?php echo $this->db->count_all('user')?></h3>
 
               <p>Total User</p>
             </div>
@@ -39,7 +39,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>Rute</h3>
+              <h3><?php echo $this->db->count_all('rute')?></h3>
 
               <p>Data Rute</p>
             </div>
@@ -55,7 +55,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>Transport</h3>
+              <h3><?php echo $this->db->count_all('transportation')?></h3>
 
               <p>Data Transportation</p>
             </div>
@@ -71,28 +71,28 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>Hallo</h3>
+              <h3><?php echo $this->db->count_all('costumer')?></h3>
 
               <p>Total Customer</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
             </div>
-            <a href="#" class="small-box-footer">Lihat selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('admin/costumer')?>" class="small-box-footer">Lihat selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-gray">
             <div class="inner">
-              <h3>Hai</h3>
+              <h3><?php echo $this->db->count_all('reservation')?></h3>
 
               <p>Total Reservation</p>
             </div>
             <div class="icon">
               <i class="ion ion-plane"></i>
             </div>
-            <a href="#" class="small-box-footer">Lihat selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('admin/reservation')?>" class="small-box-footer">Lihat selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>

@@ -47,7 +47,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<form action="#" method="post">
 					<div class="agileits-btm-spc form-text">
 					</div>
-					<div class="clear"></div>
 					<h2 class="sub-head-w3ls">Booking Details</h2>
 					
 					<!-- <div class="main-agile-sectns">
@@ -75,9 +74,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<table class="table">
 								<thead class="agileits-btm-spc form-text3-title">
 									<tr>
-										<th><center>Nama</center></th>
-										<th><center>Dari</center></th>
-										<th><center>Ke</center></th>
+										<th><center>Nama Pesawat</center></th>
+										<th><center>From</center></th>
+										<th><center>To</center></th>
 										<th><center>Depart On</center></th>
 										<th><center>Arrive At</center></th>
 										<th><center>Duration</center></th>
@@ -98,11 +97,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<td><?php echo $row->depart_on; ?></td>
 										<td><?php echo $row->arrive_at; ?></td>
 										<td><?php echo gmdate("H", $durasi). ' jam '.gmdate("i", $durasi).' menit '; ?></td>
-										<td><?php echo $row->price; ?></td>
+										<td><?php echo "Rp. " .number_format($row->price,2,",",".");?></td>
 										<td>
-											<a href="<?php echo base_url();?>welcome/step1/<?php echo $row->id.'/'.$row->transportation_id ?>">
-												<button class="btn btn-sm btn-primary">Pesan
-												</button>
+											<a href="<?php echo base_url(
+												'Welcome/step1/'.$row->ruteid); ?>" class="btn btn-sm btn-primary">Pesan
+												
 											</a>
 										</td>
 									<?php endforeach;?>

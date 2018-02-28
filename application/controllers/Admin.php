@@ -46,5 +46,21 @@ class Admin extends CI_Controller{
 		$this->load->view('v_tambahtransportation');
 	}
 
+	function costumer(){
+		$data['costumer'] = $this->m_admin->tampil_costumer();
+		$this->load->view('v_costumer', $data);
+	}
+
+	function reservation(){
+		$data['reservation'] = $this->m_admin->tampil_reservation();
+		$this->load->view('v_reservation', $data);
+	}
+
+	function konfirmasi($kode)
+	{
+		$this->m_admin->konfirmasi($kode);
+		redirect(base_url('admin/reservation'));
+	}
+
 
 }
